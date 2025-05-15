@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 783636626851266367}
   - component: {fileID: 4318410107624195264}
   - component: {fileID: 7045276995060747417}
+  - component: {fileID: 6134684228429783817}
   m_Layer: 0
   m_Name: DropAera
   m_TagString: DropArea
@@ -134,3 +135,16 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6134684228429783817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8921361343303424874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a789f32db36a43644ac754a4e0181891, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  solution: Bobby

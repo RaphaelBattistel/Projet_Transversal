@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class DragAndDrop : MonoBehaviour
@@ -27,6 +28,7 @@ public class DragAndDrop : MonoBehaviour
         var rayOrigin = Camera.main.transform.position;
         var rayDirection = MouseWorldPosition() - Camera.main.transform.position;
         RaycastHit2D hitInfo;
+
         if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
         {
             if (hitInfo.transform.tag == destinationTag)
@@ -35,6 +37,15 @@ public class DragAndDrop : MonoBehaviour
             }
         }
         collider2d.enabled = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == destinationTag) 
+        {
+            Debug.Log("je te vois");
+        }
+
     }
 
     Vector3 MouseWorldPosition()

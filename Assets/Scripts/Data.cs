@@ -6,8 +6,15 @@ using UnityEngine;
 public class Data
 {
     public Sprite sprite;
-    public Color color;
-    public float scaleCoef;
-    public int id;
+    public string name;
+    public enum STYLE
+    {
+        Fusion,
+        Cafe,
+        Ballad,
+        Waltz
+    }
+    public STYLE style;
+    public string solutionImg;
     public int value;
 }

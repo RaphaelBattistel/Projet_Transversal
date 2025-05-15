@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 [CreateAssetMenu(fileName = "Database", menuName = "Database", order = 1)]
 
 public class Database : ScriptableObject
@@ -17,6 +18,9 @@ public class Database : ScriptableObject
     public CATEGORY category;
 
     [SerializeField] private List<Data> datas = new();
+
+    public static object Instance { get; internal set; }
+
     public Data GetData(int id, bool random = false)
     {
         if (random && (id < 0 || id >= datas.Count))
