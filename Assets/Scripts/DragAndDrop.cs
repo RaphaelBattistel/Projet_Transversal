@@ -6,10 +6,14 @@ public class DragAndDrop : MonoBehaviour
     Vector3 offset;
     Collider2D collider2d;
     public string destinationTag = "DropArea";
+    public string soluce;
+    public int a = 1;
 
     void Awake()
     {
         collider2d = GetComponent<Collider2D>();
+        
+        
     }
 
     void OnMouseDown()
@@ -31,21 +35,16 @@ public class DragAndDrop : MonoBehaviour
 
         if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
         {
+            Solution solut = hitInfo.collider.GetComponent<Solution>();
+            Debug.Log(solut.solution);
+
+
             if (hitInfo.transform.tag == destinationTag)
             {
                 transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
             }
         }
         collider2d.enabled = true;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == destinationTag) 
-        {
-            Debug.Log("je te vois");
-        }
-
     }
 
     Vector3 MouseWorldPosition()
