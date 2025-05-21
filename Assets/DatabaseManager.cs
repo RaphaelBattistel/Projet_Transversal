@@ -30,6 +30,27 @@ public class DatabaseManager : MonoBehaviour
 
     public void CreateUser()
     {
+        dbReference.Child("hosts").Child(sessionID).GetValueAsync().ContinueWithOnMainThread(saveTask =>
+        {
+            if (saveTask.IsFaulted)
+            {
+                Debug.Log("Erreur, pas la bonne formulation");
+            }
+
+            else if (saveTask.IsCompleted)
+            {
+                DataSnapshot snapshot = saveTask.Result;
+
+                if(snapshot.Value == null)
+                {
+                    Debug.Log("Error, no value found");
+                }
+
+                
+            }
+        });
+
+
 
         CheckIfSessionIdExistsInHosts(
         SessionID.text, 
