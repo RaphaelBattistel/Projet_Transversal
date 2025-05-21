@@ -8,12 +8,5 @@ public class Data : ScriptableObject
     public Sprite sprite;
     public int idQuestion;
     public int idReponse;
-    public int idBonneRep;
 
-    public enum QA
-    {
-        Question,
-        Reponse
-    }
-    
 }

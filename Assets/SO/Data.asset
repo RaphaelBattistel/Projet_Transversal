@@ -10,11 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: acf322b3531198d4abdcf7c6bdb3d5b9, type: 3}
-  m_Name: Question
+  m_Name: Data
   m_EditorClassIdentifier: 
   sprite: {fileID: 0}
-  Name: 
-  qa: 0
-  style: 0
-  solutionImg: 
-  value: 0
+  idQuestion: 0
+  idReponse: 2
