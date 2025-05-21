@@ -1,20 +1,19 @@
 using System;
-using UnityEditor.Overlays;
 using UnityEngine;
 
 [Serializable]
-public class Data
+[CreateAssetMenu(fileName = "Data", menuName = "Data", order = 1)]
+public class Data : ScriptableObject
 {
     public Sprite sprite;
-    public string name;
-    public enum STYLE
+    public int idQuestion;
+    public int idReponse;
+    public int idBonneRep;
+
+    public enum QA
     {
-        Fusion,
-        Cafe,
-        Ballad,
-        Waltz
+        Question,
+        Reponse
     }
-    public STYLE style;
-    public string solutionImg;
-    public int value;
+    
 }

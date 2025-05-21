@@ -12,8 +12,6 @@ public class DragAndDrop : MonoBehaviour
     void Awake()
     {
         collider2d = GetComponent<Collider2D>();
-        
-        
     }
 
     void OnMouseDown()
@@ -36,13 +34,22 @@ public class DragAndDrop : MonoBehaviour
         if (hitInfo = Physics2D.Raycast(rayOrigin, rayDirection))
         {
             Solution solut = hitInfo.collider.GetComponent<Solution>();
-            Debug.Log(solut.solution);
-
-
-            if (hitInfo.transform.tag == destinationTag)
+            
+            if (solut == null)
             {
-                transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
+                collider2d.enabled = true;
+                return;
             }
+            else
+            {
+                if (hitInfo.transform.tag == destinationTag)
+                {
+                    transform.position = hitInfo.transform.position + new Vector3(0, 0, -0.01f);
+                }
+                Debug.Log(solut.solution);
+            }
+
+            
         }
         collider2d.enabled = true;
     }
